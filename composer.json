@@ -1,17 +1,19 @@
 {
-    "name": "xvengine/skeleton-bundle",
-    "description": "Skeleton generator",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Krzysztof Bednarczyk",
-            "email": "admin@bordeux.net"
-        }
-    ],
-    "require": {
-        "php": ">=5.6",
-        "symfony/console": "~2.7|^3.0",
-        "symfony/finder": "~2.7|^3.0",
-    },
-    "bin": ["bin/xv"]
+  "name": "xvengine/skeleton-bundle",
+  "description": "Skeleton generator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Krzysztof Bednarczyk",
+      "email": "admin@bordeux.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "symfony/console": "~2.7|^3.0",
+    "symfony/finder": "~2.7|^3.0"
+  },
+  "bin": [
+    "bin/xv"
+  ]
 }
