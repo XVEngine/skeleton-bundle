@@ -12,6 +12,12 @@ class Bundle
      * @var string
      */
     private $packageDescription;
+
+    /**
+     * @var string
+     */
+    private $namespace;
+
     /**
      * @var string
      */
@@ -137,6 +143,55 @@ class Bundle
         return $this;
     }
 
+    /**
+     * Get namespace value
+     * @author Krzysztof Bednarczyk
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Set namespace value
+     * @author Krzysztof Bednarczyk
+     * @param string $namespace
+     * @return  $this
+     */
+    public function setNamespace($namespace)
+    {
+        $this->namespace = $namespace;
+        return $this;
+    }
+
+
+    public function toComposerFormat()
+    {
+        return [
+            "name" => $this->getPackageName() ?: "",
+            "description" => $this->getPackageDescription() ?: "",
+            "type" => "xvengine-bundle",
+            "authors" => [
+                [
+                    "name" => $this->getAuthorName() ?: "",
+                    "email" => $this->getAuthorEmail() ?: "",
+                    "homepage" => $this->getAuthorUrl() ?: ""
+                ]
+            ],
+            "require" => [
+                "xvengine/core" => "1.*"
+            ],
+            "autoload" => [
+                "psr-4" => [
+                    $this->getNamespace() . "\\" => ""
+                ]
+            ],
+            "extra" => [
+                "xv-namespace" => $this->getNamespace(). "\\"
+            ]
+        ];
+    }
 
 
 }
