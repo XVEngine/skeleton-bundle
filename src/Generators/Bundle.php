@@ -188,7 +188,7 @@ class Bundle
                 ]
             ],
             "extra" => [
-                "xv-namespace" => $this->getNamespace(). "\\"
+                "xv-namespace" => $this->getNamespace() . "\\"
             ]
         ];
     }

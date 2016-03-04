@@ -15,7 +15,7 @@ use XVEngine\Bundle\SkeletonBundle\Generators\Bundle;
  * @author Krzysztof Bednarczyk
  * @package XVEngine\Bundle\SkeletonBundle\Command
  */
-class GenerateCommand extends AbstractCommand
+class GenerateBundleCommand extends AbstractCommand
 {
     /**
      * @author Krzysztof Bednarczyk
@@ -23,7 +23,7 @@ class GenerateCommand extends AbstractCommand
     protected function configure()
     {
         $this
-            ->setName('xv:bundle')
+            ->setName('new:bundle')
             ->setDescription('Generating new bundle')
             ->addArgument(
                 'dir',
@@ -45,7 +45,7 @@ class GenerateCommand extends AbstractCommand
 
 
         $helper = $this->getHelper('question');
-        $question = new Question("Please enter the name of the package name, ex: acme/test-bundle: \n");
+        $question = new Question("Please enter the name of the package name, [a-z\\-] ex: acme/test-bundle: \n");
 
         $bundle->setPackageName(
             $helper->ask($input, $output, $question)
