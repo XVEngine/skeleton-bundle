@@ -1,6 +1,6 @@
 <?php
 
-namespace VEngine\Bundle\SkeletonBundle\Console;
+namespace XVEngine\Bundle\SkeletonBundle\Console;
 
 use Symfony\Component\Console\Command\Command;
 

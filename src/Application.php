@@ -4,7 +4,7 @@ namespace XVEngine\Bundle\SkeletonBundle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
-use VEngine\Bundle\SkeletonBundle\Console\AbstractCommand;
+use XVEngine\Bundle\SkeletonBundle\Console\AbstractCommand;
 
 /**
  * Class Application
@@ -45,11 +45,10 @@ class Application extends \Symfony\Component\Console\Application
      * @author Krzysztof Bednarczyk
      * @return $this
      */
-    public function loadCommands()
+    private function loadCommands()
     {
-
         foreach ($this->findCommandClasses() as $class) {
-            $this->add(new $class($this));
+           $this->add(new $class());
         }
         return $this;
     }

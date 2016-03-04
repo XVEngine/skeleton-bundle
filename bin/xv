@@ -9,9 +9,7 @@ if (ini_get('mbstring.internal_encoding')) {
 }
 $loaded = false;
 
-$vendorFiles = [
-   // __DIR__ . '/vendor/autoload.php'
-];
+$vendorFiles = [];
 
 
 $path = __DIR__;
@@ -19,6 +17,8 @@ foreach (explode(DIRECTORY_SEPARATOR, __DIR__) as $item) {
     $path = realpath($path . DIRECTORY_SEPARATOR . '..');
     $vendorFiles[] = $path . DIRECTORY_SEPARATOR . "autoload.php";
 }
+
+$vendorFiles[] = __DIR__ . '/vendor/autoload.php';
 
 
 foreach ($vendorFiles as $file) {
@@ -40,5 +40,4 @@ if (!$loaded) {
 
 
 $application = new Application();
-
 $application->run();
