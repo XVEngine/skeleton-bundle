@@ -1,11 +1,13 @@
 #!/usr/bin/env php
 <?php
+use XVEngine\Bundle\SkeletonBundle\Command\Application;
+
 ini_set('mbstring.func_overload', 0);
 if (ini_get('mbstring.internal_encoding')) {
     ini_set('mbstring.internal_encoding', NULL);
 }
 $loaded = false;
-foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
+foreach (array(__DIR__ . '/../../../autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
     if (file_exists($file)) {
         require $file;
         $loaded = true;
@@ -21,7 +23,6 @@ if (!$loaded) {
 }
 
 
-use Symfony\Component\Console\Application;
 
 $application = new Application();
 
