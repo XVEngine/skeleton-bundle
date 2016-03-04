@@ -15,5 +15,8 @@
   },
   "bin": [
     "bin/xv"
-  ]
+  ],
+  "psr-0": {
+    "XVEngine\\Bundle\\SkeletonBundle": "src/"
+  }
 }
