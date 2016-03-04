@@ -17,8 +17,8 @@
     "bin/xv"
   ],
   "autoload": {
-    "classmap": [
-      "src/"
-    ]
+    "psr-4": {
+      "XVEngine\\Bundle\\": "src/"
+    }
   }
 }
