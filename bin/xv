@@ -1,13 +1,19 @@
 #!/usr/bin/env php
 <?php
-use XVEngine\Bundle\SkeletonBundle\Command\Application;
+use XVEngine\Bundle\SkeletonBundle\Application;
 
 ini_set('mbstring.func_overload', 0);
 if (ini_get('mbstring.internal_encoding')) {
     ini_set('mbstring.internal_encoding', NULL);
 }
 $loaded = false;
-foreach (array(__DIR__ . '/../../../autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
+
+$vendorFiles = [
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/vendor/autoload.php'
+];
+
+foreach ($vendorFiles as $file) {
     if (file_exists($file)) {
         require $file;
         $loaded = true;
@@ -21,7 +27,6 @@ if (!$loaded) {
         'php composer.phar install' . PHP_EOL
     );
 }
-
 
 
 $application = new Application();
