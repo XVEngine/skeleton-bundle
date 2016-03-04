@@ -1,0 +1,15 @@
+{
+    "name": "xvengine/skeleton-bundle",
+    "description": "Skeleton generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Krzysztof Bednarczyk",
+            "email": "admin@bordeux.net"
+        }
+    ],
+    "require": {
+        "symfony/console": "^3.0"
+    },
+    "bin": ["bin/xv"]
+}
